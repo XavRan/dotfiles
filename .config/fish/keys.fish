@@ -1,1 +1,0 @@
-set -x OPENAI_KEY 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
