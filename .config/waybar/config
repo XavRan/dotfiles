@@ -15,7 +15,7 @@
     ],
     "modules-center": ["hyprland/window"],
     "modules-right": [
-        // "tray",
+        "tray",
         "network",
         // "custom/updates",
         // "custom/language",
@@ -81,8 +81,9 @@
     },
     "tray": {
         "icon-size": 13,
-        "tooltip": false,
-        "spacing": 10
+        "tooltip": true,
+        "spacing": 10,
+        "tooltip-format": "Hola"
     },
     "clock": {
         "format": "{: %R   %d/%m}",

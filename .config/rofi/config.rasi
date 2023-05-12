@@ -10,6 +10,20 @@ configuration {
 	window-format:               "{w}{t}";
 	font:                        "Hack Nerd Font 11";
 	icon-theme:                  "Qogir-dark";
+filebrowser {
+    /** Directory the file browser starts in. */
+    directory: "/home/xavran";
+    /**
+      * Sorting method. Can be set to:
+      *   - "name"
+      *   - "mtime" (modification time)
+      *   - "atime" (access time)
+      *   - "ctime" (change time)
+      */
+    sorting-method: "name";
+    /** Group directories before files. */
+    directories-first: true;
+    }
 }
 
 //@theme "/dev/null"
@@ -70,7 +84,7 @@ mainbox {
     background-color:            transparent;
     orientation:                 horizontal;
     children:                    [  "inputbar" , "listbox" ];
-	background-image:            url("~/Documents/Wallpapers/smile.jpg", height);
+	background-image:            url("~/Documents/Wallpapers/smile_small.jpg", height);
 }
 
 
@@ -80,7 +94,7 @@ inputbar {
     width:                       25%;
 	//children:                    [ "mode-switcher" , "entry" ];
 	background-color:            transparent;
-	background-image:            url("~/Documents/Wallpapers/smile.jpg", height);
+	background-image:            url("", height);
 }
 entry {
     enabled:                     false;
