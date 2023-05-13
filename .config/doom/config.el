@@ -52,8 +52,16 @@
 (add-hook! conf-unix-mode 'rainbow-mode)
 
 ;; Ignore home .git
-(after! projectile (setq projectile-project-root-files-bottom-up (remove ".git"
-          projectile-project-root-files-bottom-up)))
+(after! projectile
+  (setq projectile-project-search-path '("~/Code/"))
+  (setq projectile-project-root-functions
+        (delete 'projectile-root-local projectile-project-root-functions))
+  (setq projectile-indexing-method 'alien))
+
+;; Enable hidden files on counsel-search
+(after! counsel
+  (setq counsel-find-file-ignore-regexp nil))
+(setq-default dired-omit-files-p nil)
 
 ;; Relative numbers by default
 (setq display-line-numbers-type 'relative)
