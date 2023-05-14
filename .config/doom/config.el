@@ -55,13 +55,11 @@
 (after! projectile
   (setq projectile-project-search-path '("~/Code/"))
   (setq projectile-project-root-functions
-        (delete 'projectile-root-local projectile-project-root-functions))
-  (setq projectile-indexing-method 'alien))
+        (delete 'projectile-root-local projectile-project-root-functions)))
 
 ;; Enable hidden files on counsel-search
 (after! counsel
   (setq counsel-find-file-ignore-regexp nil))
-(setq-default dired-omit-files-p nil)
 
 ;; Relative numbers by default
 (setq display-line-numbers-type 'relative)
