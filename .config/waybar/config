@@ -7,28 +7,30 @@
     "gtk-layer-shell": true,
     "height": 0,
     "modules-left": [
-        "clock",
         // "cpu",
         // "memory",
         // "custom/weather",
-        "wlr/workspaces"
+        "custom/arch",
+        "wlr/workspaces",
+        "tray"
     ],
     "modules-center": ["hyprland/window"],
     "modules-right": [
-        "tray",
         "network",
         // "custom/updates",
         // "custom/language",
         "pulseaudio",
-        "pulseaudio#microphone",
+        // "pulseaudio#microphone",
         // "backlight",
-        "battery"
+        "battery",
+        "clock"
     ],
 
     "hyprland/window": {
         "max-length": 30,
         "format": "{}"
     },
+
     "wlr/workspaces": {
         "on-scroll-up": "hyprctl dispatch workspace e+1",
         "on-scroll-down": "hyprctl dispatch workspace e-1",
@@ -46,6 +48,7 @@
             "default": ""
           }
     },
+
     "cpu": {
         "interval": 10,
         "format": "󰍛 {usage}%",
@@ -82,11 +85,10 @@
     "tray": {
         "icon-size": 13,
         "tooltip": true,
-        "spacing": 10,
-        "tooltip-format": "Hola"
+        "spacing": 10
     },
     "clock": {
-        "format": "{: %R   %d/%m}",
+        "format": "{: %d/%m |  %R}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "pulseaudio": {
@@ -126,7 +128,7 @@
         "format-disconnected": " Disconnected",
         "format-alt": "󰤨 {signalStrength}%",
         "interval": 5,
-        "max-length": 12
+        "max-length": 10
     },
     "battery": {
       "bat": "BAT0",
@@ -140,5 +142,8 @@
       "format-icons": [" ", " ", " ", " "],
       "max-length": 25,
       "tooltip": false
+    },
+    "custom/arch": {
+    "format": " {}",
     },
 }
