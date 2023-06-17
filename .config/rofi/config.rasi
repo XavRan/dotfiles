@@ -84,7 +84,7 @@ mainbox {
     background-color:            transparent;
     orientation:                 horizontal;
     children:                    [  "inputbar" , "listbox" ];
-	background-image:            url("~/Documents/Wallpapers/smile_small.jpg", height);
+	background-image:            url("~/Documents/Wallpapers/OnePiece_small.jpg", height);
 }
 
 

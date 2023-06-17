@@ -9,9 +9,13 @@ if status is-interactive
     set -U fish_user_paths ~/.local/share/bin $fish_user_paths
     set -U fish_user_paths ~/.config/emacs/bin $fish_user_paths
 
+    set -x EDITOR /usr/bin/vim
+
     bind -M insert \ef accept-autosuggestion
 
     alias ls lsd
     alias cat bat
     alias find fd
+
+    wal -Rq
 end

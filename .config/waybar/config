@@ -14,8 +14,11 @@
         "wlr/workspaces",
         "tray"
     ],
-    "modules-center": ["hyprland/window"],
+    "modules-center": [
+        "hyprland/window"
+    ],
     "modules-right": [
+        "custom/toggle-lock",
         "network",
         // "custom/updates",
         // "custom/language",
@@ -25,12 +28,10 @@
         "battery",
         "clock"
     ],
-
     "hyprland/window": {
         "max-length": 30,
         "format": "{}"
     },
-
     "wlr/workspaces": {
         "on-scroll-up": "hyprctl dispatch workspace e+1",
         "on-scroll-down": "hyprctl dispatch workspace e-1",
@@ -46,16 +47,23 @@
             "urgent": "",
             "active": "",
             "default": ""
-          }
+        }
     },
-
     "cpu": {
         "interval": 10,
         "format": "󰍛 {usage}%",
         "format-alt": "{icon0}{icon1}{icon2}{icon3}",
-        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+        "format-icons": [
+            "▁",
+            "▂",
+            "▃",
+            "▄",
+            "▅",
+            "▆",
+            "▇",
+            "█"
+        ]
     },
-
     "memory": {
         "interval": 30,
         "format": "󰾆 {percentage}%",
@@ -75,12 +83,12 @@
     //     "format": " {}",
     //     "tooltip": false
     // },
-    "custom/weather" : {
-        "tooltip" : true,
-        "format" : "{}",
-        "restart-interval" : 300,
-        "exec" : "~/.config/waybar/scripts/waybar-wttr.py",
-        "return-type" : "json"
+    "custom/weather": {
+        "tooltip": true,
+        "format": "{}",
+        "restart-interval": 300,
+        "exec": "~/.config/waybar/scripts/waybar-wttr.py",
+        "return-type": "json"
     },
     "tray": {
         "icon-size": 13,
@@ -106,7 +114,11 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": [
+                "",
+                "",
+                ""
+            ]
         }
     },
     "pulseaudio#microphone": {
@@ -131,19 +143,32 @@
         "max-length": 10
     },
     "battery": {
-      "bat": "BAT0",
-      "interval": 30,
-      "states": {
-        "warning": 30,
-        "critical": 15
-      },
-      "format": "<b>{icon} {capacity}%</b>",
-      "format-charging": "<b>⚡ {icon} {capacity}%</b>",
-      "format-icons": [" ", " ", " ", " "],
-      "max-length": 25,
-      "tooltip": false
+        "bat": "BAT0",
+        "interval": 30,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "<b>{icon} {capacity}%</b>",
+        "format-charging": "<b>⚡ {icon} {capacity}%</b>",
+        "format-icons": [
+            " ",
+            " ",
+            " ",
+            " "
+        ],
+        "max-length": 25,
+        "tooltip": false
     },
     "custom/arch": {
-    "format": " {}",
+        "format": " {}",
     },
+    "custom/toggle-lock": {
+        "exec": "~/.config/waybar/scripts/lock-status.sh",
+        "exec-on-event": true,
+        "on-click": "~/.config/waybar/scripts/toggle-lock.sh",
+        "return-type": "json",
+        "tooltip": "Toggle lock",
+        "interval": 1,
+    }
 }
