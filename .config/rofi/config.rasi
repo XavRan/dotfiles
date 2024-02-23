@@ -1,172 +1,203 @@
-// Config //
-configuration {
-	modi:                        "drun,filebrowser,window,run";
-	show-icons:                  true;
-	display-drun:                " ";
-	display-run:                 "";
-	display-filebrowser:         " ";
-	display-window:              " ";
-	drun-display-format:         "{name}";
-	window-format:               "{w}{t}";
-	font:                        "Hack Nerd Font 11";
-	icon-theme:                  "Qogir-dark";
-filebrowser {
-    /** Directory the file browser starts in. */
-    directory: "/home/xavran";
-    /**
-      * Sorting method. Can be set to:
-      *   - "name"
-      *   - "mtime" (modification time)
-      *   - "atime" (access time)
-      *   - "ctime" (change time)
-      */
-    sorting-method: "name";
-    /** Group directories before files. */
-    directories-first: true;
-    }
-}
 
-//@theme "/dev/null"
-
-
-// Global //
 * {
-	foreground:                  #cdd6f4ff; //Text
-	normal-foreground:           @foreground;
-	urgent-foreground:           #11111bff; //Crust
-	active-foreground:           #11111bff; //Crust
-
-	alternate-normal-foreground: @normal-foreground;
-	alternate-urgent-foreground: @urgent-foreground;
-	alternate-active-foreground: @active-foreground;
-
-	selected-normal-foreground:  #11111bff; //Crust
-	selected-urgent-foreground:  #11111bff; //Crust
-	selected-active-foreground:  #11111bff; //Crust
-
-	background:                  transparent;
-	normal-background:           @background;
-	urgent-background:           #eba0accc; //Maroon
-	active-background:           #94e2d5cc; //Teal
-
-	alternate-normal-background: @normal-background;
-	alternate-urgent-background: @urgent-background;
-	alternate-active-background: @active-background;
-
-	selected-normal-background:  #b4befeff; //Lavender
-	selected-urgent-background:  #94e2d5cc; //Teal
-	selected-active-background:  #eba0accc; //Maroon
-
-	separatorcolor:              transparent;
-	border-color:                transparent;
-	border-radius:               0px;
-	spacing:                     0px;
-	padding:                     0px;
-	height:                      55%;
-    width:                       45%;
+  /* Default background color */
+  background-color: #282738;
+  text-color:       #E5B9C6;
+  font: "JetBrainsMono Bold 10";
 }
 
 
-// Main //
 window {
-    transparency:                "real";
-    fullscreen:                  false;
-    enabled:                     true;
-    cursor:                      "default";
-    spacing:                     0px;
-    padding:                     0px;
-    border-radius:               50px;
-    border-color:                #f2cdcdff; //Flamingo
+  padding: 1em;
+  border-color: #282738;
+  border:       5px;
+  border-radius: 10px;
+  background-color: #282738;
+
 }
+
 mainbox {
-    enabled:                     true;
-    spacing:                     0px;
-    background-color:            transparent;
-    orientation:                 horizontal;
-    children:                    [  "inputbar" , "listbox" ];
-	background-image:            url("~/Documents/Wallpapers/OnePiece_small.jpg", height);
+  spacing: 0px;
+  children: [message,inputbar,listview];
 }
 
+message {
+    enabled:                     true;
+    margin:                      0px 100px;
+    padding:                     15px;
+    border:                      0px solid;
+    border-radius:               15px;
+    border-color:                inherit;
+    background-color:            inherit;
+    text-color:                  inherit;
+    size:                        400em;
+}
+textbox {
+    background-color:            inherit;
+    text-color:                  inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+    placeholder-color:           inherit;
+    blink:                       true;
+    markup:                      true;
+    size:                        400em;
+    font: "JetBrainsMono Bold 15";
 
-// Inputs //
+}
+error-message {
+    padding:                     12px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                inherit;
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+
+element {
+  background: transparent;
+  children: [ element-icon, element-text ];
+}
+element,element-text,element-icon, button {
+    cursor: pointer;
+}
+
 inputbar {
-    enabled:                     true;
-    width:                       25%;
-	//children:                    [ "mode-switcher" , "entry" ];
-	background-color:            transparent;
-	background-image:            url("", height);
-}
-entry {
-    enabled:                     false;
+  margin: 0px 10px;
+  spacing: 0.4em;
+  border-color: #282738;
+  border:        5px;
+  background-color: #282738;
+  children: [entry,overlay,case-indicator];
 }
 
-// Lists //
-listbox {
-    spacing:                     10px;
-    padding:                     30px;
-	children:                    [ "listview" ];
-	background-color:            #11111be6; //Crust
+
+listview, message {
+  padding: 0.5em;
+  border-color: #282738;
+  border:        5px;
+  border-radius: 10px;
+  background-color: #282738;
+
+  columns: 1;
+  lines:   8;
 }
 listview {
-    enabled:                     true;
-    columns:                     1;
-    cycle:                       true;
-    dynamic:                     true;
-    scrollbar:                   false;
-    layout:                      vertical;
-    reverse:                     false;
-    fixed-height:                true;
-    fixed-columns:               true;
-    text-color:                  @foreground;
-    cursor:                      "default";
+  border:       0px 5px 5px 5px;
+  border-radius: 10px 10px 10px 10px;
+  spacing: 10px;
+  background-color: #282738;
+  border-color:     #282738;
+  scrollbar:    true;
 }
 
 
-// Elements //
 element {
-    enabled:                     true;
-    spacing:                     30px;
-    padding:                     7px;
-    border-radius:               20px;
-    background-color:            @background;
-    text-color:                  @foreground;
-    cursor:                      pointer;
-}
-element normal.normal {
-    background-color:            @normal-background;
-    text-color:                  @normal-foreground;
-}
-element normal.urgent {
-    background-color:            @urgent-background;
-    text-color:                  @urgent-foreground;
-}
-element normal.active {
-    background-color:            @active-background;
-    text-color:                  @active-foreground;
-}
-element selected.normal {
-    background-color:            @selected-normal-background;
-    text-color:                  @selected-normal-foreground;
-}
-element selected.urgent {
-    background-color:            @selected-urgent-background;
-    text-color:                  @selected-urgent-foreground;
-}
-element selected.active {
-    background-color:            @selected-active-background;
-    text-color:                  @selected-active-foreground;
-}
-element-icon {
-    background-color:            transparent;
-    text-color:                  inherit;
-    size:                        48px;
-    cursor:                      inherit;
+    border:  5px;
+    border-radius: 5px;
+    padding: 5px;
+    border-color: #282738;
 }
 element-text {
-    background-color:            transparent;
-    text-color:                  inherit;
-    cursor:                      inherit;
-    vertical-align:              0.5;
-    horizontal-align:            0.0;
+    background-color: #282738;
+    text-color:       #FFFFFF;
+    font: "JetBrains Mono Medium";
 }
 
+element normal.normal {
+    background-color: #282738;
+    text-color:       #E5B9C6;
+}
+element.normal.urgent {
+    background-color: #282738;
+    text-color:       #E5B9C6;
+}
+element.normal.active {
+    background-color: #282738;
+    text-color:       #E5B9C6;
+}
+element.selected.normal {
+    background-color: #E5B9C6;
+    border-color: #E5B9C6;
+    text-color:       #E5B9C6;
+}
+element.selected.urgent {
+    background-color: #E5B9C6;
+    border-color: #E5B9C6;
+    text-color:       #E5B9C6;
+}
+element.selected.active {
+    background-color: #E5B9C6;
+    border-color: #E5B9C6;
+    text-color:       #E5B9C6;
+}
+element.alternate.normal {
+    background-color: #282738;
+    text-color:       #E5B9C6;
+}
+element.alternate.urgent {
+    background-color: #282738;
+    text-color:       #E5B9C6;
+}
+element.alternate.active {
+    background-color: #282738;
+    text-color:       #E5B9C6;
+}
+
+
+element-text.selected.normal {
+    background-color: #E5B9C6;
+    border-color: #E5B9C6;
+    text-color:       #282738;
+    font: "JetBrains Mono Medium";
+}
+element-text.selected.urgent {
+    background-color: #E5B9C6;
+    border-color: #E5B9C6;
+    text-color:       #282738;
+    font: "JetBrains Mono Medium";
+}
+element-text.selected.active {
+    background-color: #E5B9C6;
+    border-color: #E5B9C6;
+    text-color:       #282738;
+    font: "JetBrains Mono Medium";
+}
+scrollbar {
+    width:        4px ;
+    border:       0;
+    handle-color: #E5B9C6;
+    handle-width: 8px ;
+    padding:      0;
+}
+mode-switcher {
+    border:  0px;
+    spacing: 0px;
+    expand: true;
+}
+button {
+    text-color: #E5B9C6;
+    border:       0px 0px 5px ;
+    border-color: #282738;
+    border-radius:    10px 10px 0 0;
+    background-color: #282738;
+    horizontal-align: 0.5;
+}
+button selected.normal {
+    text-color: #E5B9C6;
+    margin: 0px;
+    padding: 0px;
+    border:     5px 5px 5px 5px ;
+    border-color: #282738;
+    border-radius:    10px 10px 10px 10px;
+    background-color: #353446;
+}
+
+entry {
+    placeholder: "Search here";
+    placeholder-color: #B58996;
+    border-color: #353446;
+    background-color: #353446;
+    border:        10px;
+    border-radius: 2px 2px 2px 2px;
+    text-color: #E5B9C6;
+  }
