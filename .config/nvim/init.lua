@@ -14,10 +14,6 @@ vim.g.maplocalleader = " "
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
--- Color fix
-vim.opt.termguicolors = true
-vim.g.neovide_background_color = "#ffffff"
-
 -- Make line numbers default
 vim.opt.number = true
 
@@ -63,6 +59,10 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+-- Color fix
+vim.opt.termguicolors = true
+vim.g.neovide_background_color = "#ffffff"
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
