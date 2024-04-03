@@ -1,12 +1,8 @@
 return {
 	{
 		"kdheepak/lazygit.nvim",
-		cmd = {
-			"LazyGit",
-			"LazyGitConfig",
-			"LazyGitCurrentFile",
-			"LazyGitFilter",
-			"LazyGitFilterCurrentFile",
+		keys = {
+			{ "<leader>gg", "<cmd>LazyGit<CR>", desc = "[G]it Panel" },
 		},
 		-- optional for floating window border decoration
 		dependencies = {

@@ -60,10 +60,6 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
--- Color fix
-vim.opt.termguicolors = true
-vim.g.neovide_background_color = "#ffffff"
-
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -141,6 +137,12 @@ if not vim.loop.fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
+if vim.g.neovide then
+	vim.o.guifont = "FiraCode Nerd Font:h11"
+	vim.opt.termguicolors = true
+	vim.g.neovide_background_color = "#ffffff"
+end
+
 -- [[ Configure and install plugins ]]
 --
 --  You can press `?` in this menu for help. Use `:q` to close the window
@@ -187,6 +189,7 @@ require("lazy").setup({
 				["<leader>w"] = { name = "[W]orkspace", _ = "which_key_ignore" },
 
 				["<leader>b"] = { name = "[B]uffers", _ = "which_key_ignore" },
+				["<leader>g"] = { name = "[G]it", _ = "which_key_ignore" },
 				["<leader>h"] = { name = "[H]arpoon", _ = "which_key_ignore" },
 				["<leader>t"] = { name = "[T]oggleterm", _ = "which_key_ignore" },
 				["<leader>o"] = { name = "[O]il File Manager", _ = "which_key_ignore" },
