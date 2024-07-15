@@ -1,13 +1,16 @@
 return {
+
+	{ "tpope/vim-sleuth" }, -- Detect tabstop and shiftwidth automatically
+
 	{ "NvChad/nvim-colorizer.lua", opts = {} },
 
 	{ "yamatsum/nvim-cursorline", opts = {} },
 
-	{ "VidocqH/auto-indent.nvim", opts = {} },
-	{
-		"stevearc/dressing.nvim",
-		opts = {},
-	},
+	-- TODO: Nice for better looking LSP rename but not mandatory. Remove or activate
+	-- {
+	-- 	"stevearc/dressing.nvim",
+	-- 	opts = {},
+	-- },
 
 	{
 		"akinsho/toggleterm.nvim",
@@ -20,33 +23,30 @@ return {
 	},
 
 	{
-		"2kabhishek/nerdy.nvim",
-		dependencies = {
-			"stevearc/dressing.nvim",
-			"nvim-telescope/telescope.nvim",
-		},
-		cmd = "Nerdy",
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		config = function()
+			---@diagnostic disable-next-line: missing-fields
+			require("nvim-treesitter.configs").setup({
+				textobjects = {
+					select = {
+						enable = true,
+						lookahead = true,
+						keymaps = {
+							["af"] = "@function.outer",
+							["if"] = "@function.inner",
+							["ac"] = "@class.outer",
+							["ic"] = "@class.inner",
+						},
+					},
+				},
+			})
+		end,
 	},
 
 	-- Sesion Saving
 	{
 		"folke/persistence.nvim",
 		event = "BufReadPre", -- this will only start session saving when an actual file was opened
-		opts = {},
-	},
-
-	-- TJ why autopairs not default L+Ratio
-	{
-		"windwp/nvim-autopairs",
-		event = "InsertEnter",
-		opts = {}, -- this is equalent to setup({}) function
-	},
-
-	-- Put things on " " and ( )
-	{
-		"kylechui/nvim-surround",
-		version = "*", -- Use for stability; omit to use `main` branch for the lavim features
-		event = "VeryLazy",
 		opts = {},
 	},
 
@@ -72,6 +72,6 @@ return {
 		opts = {},
 	},
 
-	-- TODO: Test plugin
+	-- TODO: Test plugin (seems to not work)
 	{ "aznhe21/actions-preview.nvim" },
 }

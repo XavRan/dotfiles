@@ -9,6 +9,9 @@
 return {
 	-- NOTE: Yes, you can install new plugins here!
 	"mfussenegger/nvim-dap",
+	keys = {
+		{ "<leader>d", "require('dap').toggle_breakpoint", desc = "[D]ebug: Toggle Breakpoint" },
+	},
 	-- NOTE: And you can specify dependencies as well
 	dependencies = {
 		-- Creates a beautiful debugger UI
@@ -28,6 +31,7 @@ return {
 		local dap = require("dap")
 		local dapui = require("dapui")
 
+		---@diagnostic disable-next-line: missing-fields
 		require("mason-nvim-dap").setup({
 			-- Makes a best effort to setup the various debuggers with
 			-- reasonable debug configurations
