@@ -2,7 +2,7 @@ return {
 
 	{ "tpope/vim-sleuth" }, -- Detect tabstop and shiftwidth automatically
 
-	{ "NvChad/nvim-colorizer.lua", opts = {} },
+	{ "NvChad/nvim-colorizer.lua", opts = {} }, -- Hex colors in code
 
 	{ "yamatsum/nvim-cursorline", opts = {} },
 
@@ -11,6 +11,18 @@ return {
 	-- 	"stevearc/dressing.nvim",
 	-- 	opts = {},
 	-- },
+
+	--TODO: Remove plugin when debian updates to 0.10
+	-- "gc" to comment visual regions/lines
+	{ "numToStr/Comment.nvim", opts = {} },
+
+	-- Highlight todo, notes, etc in comments
+	{
+		"folke/todo-comments.nvim",
+		event = "VimEnter",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		opts = { signs = false },
+	},
 
 	{
 		"akinsho/toggleterm.nvim",

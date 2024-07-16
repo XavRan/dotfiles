@@ -64,6 +64,9 @@ vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]])
 -- Lazy shorcut
 vim.keymap.set("n", "<leader>l", ":Lazy<CR>", { desc = "Open [L]azy Panel" })
 
+-- Mason shorcut
+vim.keymap.set("n", "<leader>m", ":Mason<CR>", { desc = "Open [M]ason Panel" })
+
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
