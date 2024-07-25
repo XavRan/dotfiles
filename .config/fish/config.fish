@@ -9,8 +9,12 @@ if status is-interactive
 
     pfetch
     alias ls="exa --icons auto --color=always --group-directories-first"
+    alias lt="ls -T"
     alias cat="bat --theme Coldark-Dark"
     alias grep="rg"
 
+    fish_add_path /home/xavran/.cargo/bin
+
     starship init fish | source
+    enable_transience
 end
