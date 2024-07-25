@@ -2,7 +2,7 @@ return {
 
 	{ "tpope/vim-sleuth" }, -- Detect tabstop and shiftwidth automatically
 
-	{ "NvChad/nvim-colorizer.lua", opts = {} }, -- Hex colors in code
+	-- { "NvChad/nvim-colorizer.lua", opts = {} }, -- Hex colors in code
 
 	{ "yamatsum/nvim-cursorline", opts = {} },
 
@@ -84,6 +84,27 @@ return {
 		opts = {},
 	},
 
-	-- TODO: Test plugin (seems to not work)
-	{ "aznhe21/actions-preview.nvim" },
+	{
+		"aznhe21/actions-preview.nvim",
+		opts = {
+			telescope = {
+				sorting_strategy = "ascending",
+				layout_strategy = "vertical",
+				layout_config = {
+					width = 0.8,
+					height = 0.9,
+					prompt_position = "top",
+					preview_cutoff = 20,
+					preview_height = function(_, _, max_lines)
+						return max_lines - 15
+					end,
+				},
+			},
+		},
+		keys = {
+			{ "<leader>ca", "<cmd>lua require('actions-preview').code_actions()<CR>", desc = "Show [C]ode [A]ctions" },
+		},
+	},
+
+	{ "kosayoda/nvim-lightbulb", opts = { autocmd = { enabled = true } } },
 }

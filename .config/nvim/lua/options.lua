@@ -28,6 +28,7 @@ vim.opt.undofile = true
 -- Case-insensitive searching UNLESS \C or capital in search
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+vim.opt.smartindent = true
 
 -- Keep signcolumn on by default
 vim.opt.signcolumn = "yes"
@@ -52,10 +53,17 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
-vim.opt.smartindent = true
-
 -- don't create swap files
 vim.opt.swapfile = false
 
 -- Rust compiler errors
 vim.diagnostic.config({ virtual_text = true })
+
+-- Set up transparency
+vim.api.nvim_create_autocmd("BufEnter", {
+	callback = function()
+		vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
+		vim.cmd("highlight NormalNC guibg=NONE ctermbg=NONE")
+		vim.cmd("highlight signcolumn guibg=NONE ctermbg=NONE")
+	end,
+})

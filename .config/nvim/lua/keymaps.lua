@@ -34,12 +34,6 @@ vim.keymap.set("n", "<C-e>", "<C-w><C-j>", { desc = "Move focus to the lower win
 vim.keymap.set("n", "<C-i>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 -- DOOM keybinds
--- Window splitting and closing
-vim.keymap.set("n", "<leader>bv", ":vsplit<CR>")
-vim.keymap.set("n", "<leader>bh", ":split<CR>")
-vim.keymap.set("n", "<leader>bk", ":bp<bar>sp<bar>bn<bar>bd<CR>")
-vim.keymap.set("n", "<leader>bK", ":bp")
-
 -- Move through buffers
 vim.keymap.set("n", "<leader>bn", ":bnext<CR>")
 vim.keymap.set("n", "<leader>bp", ":bprev<CR>")
@@ -54,8 +48,9 @@ vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 -- QoL
 vim.keymap.set("v", "E", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "I", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "I", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "K", "Nzzzv")
 
 -- Clipboard copy paste
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
