@@ -35,8 +35,9 @@ vim.keymap.set("n", "<C-i>", "<C-w><C-k>", { desc = "Move focus to the upper win
 
 -- DOOM keybinds
 -- Move through buffers
-vim.keymap.set("n", "<leader>bn", ":bnext<CR>")
-vim.keymap.set("n", "<leader>bp", ":bprev<CR>")
+vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Move to [N]ext buffer" })
+vim.keymap.set("n", "<leader>bp", ":bprev<CR>", { desc = "Move to [P]revious buffer" })
+vim.keymap.set("n", "<leader>bd", ":bdelete<CR>", { desc = "Delete buffer" })
 
 -- Remap for dealing with word wrap
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })

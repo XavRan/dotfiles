@@ -1,0 +1,15 @@
+return {
+	{
+		"kdheepak/lazygit.nvim",
+		dependencies = {
+			"nvim-telescope/telescope.nvim",
+			"nvim-lua/plenary.nvim",
+		},
+		keys = {
+			{ "<leader>g", "<cmd>LazyGit<CR>", desc = "[G]it Panel" },
+		},
+		config = function()
+			require("telescope").load_extension("lazygit")
+		end,
+	},
+}
