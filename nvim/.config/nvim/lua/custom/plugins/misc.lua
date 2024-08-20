@@ -12,10 +12,6 @@ return {
 	-- 	opts = {},
 	-- },
 
-	--TODO: Remove plugin when debian updates to 0.10
-	-- "gc" to comment visual regions/lines
-	{ "numToStr/Comment.nvim", opts = {} },
-
 	-- Highlight todo, notes, etc in comments
 	{
 		"folke/todo-comments.nvim",

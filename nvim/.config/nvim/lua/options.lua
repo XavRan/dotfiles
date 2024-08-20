@@ -59,11 +59,16 @@ vim.opt.swapfile = false
 -- Rust compiler errors
 vim.diagnostic.config({ virtual_text = true })
 
+-- Conceal level
+vim.opt.conceallevel = 2
+
 -- Set up transparency
 vim.api.nvim_create_autocmd("BufEnter", {
 	callback = function()
 		vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
 		vim.cmd("highlight NormalNC guibg=NONE ctermbg=NONE")
 		vim.cmd("highlight signcolumn guibg=NONE ctermbg=NONE")
+		vim.cmd("highlight Comment cterm=italic")
+		vim.cmd("set conceallevel=2")
 	end,
 })
