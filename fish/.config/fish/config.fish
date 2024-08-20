@@ -15,6 +15,7 @@ if status is-interactive
 
     fish_add_path /home/xavran/.cargo/bin
 
+    fzf --fish | source
     starship init fish | source
     enable_transience
 end
