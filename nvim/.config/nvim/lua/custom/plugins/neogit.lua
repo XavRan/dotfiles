@@ -8,7 +8,7 @@ return {
 		"nvim-telescope/telescope.nvim", -- optional
 	},
 	keys = {
-		{ "<leader>g", "<cmd>Neogit<CR>", desc = "Neogit" },
+		{ "<leader>g", "<cmd>Neogit kind=auto<CR>", desc = "Neogit" },
 	},
 	config = true,
 }

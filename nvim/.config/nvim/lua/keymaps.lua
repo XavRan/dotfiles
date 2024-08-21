@@ -9,6 +9,12 @@ vim.keymap.set("n", ",", "/")
 vim.opt.hlsearch = true
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
+-- File Saving and nvim exit
+vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save file" })
+-- vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save file" })
+-- vim.keymap.set("n", "<leader>x", ":x<CR>", { desc = "Save and close file" })
+-- vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Close buffer" })
+
 -- Diagnostic keymaps
 vim.keymap.set("n", "<leader>cp", vim.diagnostic.goto_prev, { desc = "Go to [C]ode's [P]revious diagnostic message" })
 vim.keymap.set("n", "<leader>cn", vim.diagnostic.goto_next, { desc = "Go to [C]ode's [N]ext diagnostic message" })
@@ -35,9 +41,15 @@ vim.keymap.set("n", "<C-i>", "<C-w><C-k>", { desc = "Move focus to the upper win
 
 -- DOOM keybinds
 -- Move through buffers
-vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Move to [N]ext buffer" })
-vim.keymap.set("n", "<leader>bp", ":bprev<CR>", { desc = "Move to [P]revious buffer" })
-vim.keymap.set("n", "<leader>bd", ":bdelete<CR>", { desc = "Delete buffer" })
+vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "[B]uffer: Move to [N]ext buffer" })
+vim.keymap.set("n", "<leader>bp", ":bprev<CR>", { desc = "[B]uffer: Move to [P]revious buffer" })
+vim.keymap.set("n", "<leader>bd", ":bdelete<CR>", { desc = "[B]uffer: Delete [B]uffer" })
+
+-- Search and replace
+vim.keymap.set("n", "<Del>", ":%s/", { desc = "Search and [R]eplace" })
+
+-- Backspace to beggining of line
+vim.keymap.set("n", "<BS>", "^")
 
 -- Remap for dealing with word wrap
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -52,10 +64,14 @@ vim.keymap.set("v", "I", ":m '<-2<CR>gv=gv")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "I", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "n", "nzzzv")
 
 -- Clipboard copy paste
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]])
+
+-- Full file copy
+vim.keymap.set("n", "<C-y>", ":%y+<CR>")
 
 -- Lazy shorcut
 vim.keymap.set("n", "<leader>l", ":Lazy<CR>", { desc = "Open [L]azy Panel" })

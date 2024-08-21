@@ -17,6 +17,7 @@ return {
 		-- - sr)'  - [S]urround [R]eplace [)] [']
 		require("mini.surround").setup({
 			mappings = {
+				add = "ys",
 				replace = "cs",
 				delete = "ds",
 			},

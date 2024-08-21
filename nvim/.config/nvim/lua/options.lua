@@ -45,7 +45,7 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 -- Preview substitutions live, as you type!
-vim.opt.inccommand = "split"
+vim.opt.inccommand = "nosplit"
 
 -- Show which line your cursor is on
 vim.opt.cursorline = true

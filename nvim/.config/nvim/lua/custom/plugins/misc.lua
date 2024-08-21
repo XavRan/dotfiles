@@ -2,15 +2,18 @@ return {
 
 	{ "tpope/vim-sleuth" }, -- Detect tabstop and shiftwidth automatically
 
-	-- { "NvChad/nvim-colorizer.lua", opts = {} }, -- Hex colors in code
-
 	{ "yamatsum/nvim-cursorline", opts = {} },
 
-	-- TODO: Nice for better looking LSP rename but not mandatory. Remove or activate
-	-- {
-	-- 	"stevearc/dressing.nvim",
-	-- 	opts = {},
-	-- },
+	-- <Ctrl-a> and <Ctrl-x> to increment/decrement bools dates etc.
+	{
+		"nat-418/boole.nvim",
+		opts = {
+			mappings = {
+				increment = "<C-a>",
+				decrement = "<C-x>",
+			},
+		},
+	},
 
 	-- Highlight todo, notes, etc in comments
 	{
@@ -20,6 +23,7 @@ return {
 		opts = { signs = false },
 	},
 
+	-- TODO: Not using this terminal maybe should remove
 	{
 		"akinsho/toggleterm.nvim",
 		keys = {
@@ -28,27 +32,6 @@ return {
 			{ "<leader>tc", "<cmd>lua require('toggleterm').close()<CR>", desc = "Close [T]erminal" },
 		},
 		opts = { shell = "fish" },
-	},
-
-	{
-		"nvim-treesitter/nvim-treesitter-textobjects",
-		config = function()
-			---@diagnostic disable-next-line: missing-fields
-			require("nvim-treesitter.configs").setup({
-				textobjects = {
-					select = {
-						enable = true,
-						lookahead = true,
-						keymaps = {
-							["af"] = "@function.outer",
-							["if"] = "@function.inner",
-							["ac"] = "@class.outer",
-							["ic"] = "@class.inner",
-						},
-					},
-				},
-			})
-		end,
 	},
 
 	-- Sesion Saving
@@ -74,12 +57,14 @@ return {
 		},
 	},
 
+	-- VSCode like indent lines
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
 		opts = {},
 	},
 
+	-- Code Actions preview
 	{
 		"aznhe21/actions-preview.nvim",
 		opts = {
@@ -100,6 +85,27 @@ return {
 		keys = {
 			{ "<leader>ca", "<cmd>lua require('actions-preview').code_actions()<CR>", desc = "Show [C]ode [A]ctions" },
 		},
+	},
+
+	{
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		config = function()
+			---@diagnostic disable-next-line: missing-fields
+			require("nvim-treesitter.configs").setup({
+				textobjects = {
+					select = {
+						enable = true,
+						lookahead = true,
+						keymaps = {
+							["af"] = "@function.outer",
+							["if"] = "@function.inner",
+							["ac"] = "@class.outer",
+							["ic"] = "@class.inner",
+						},
+					},
+				},
+			})
+		end,
 	},
 
 	{ "kosayoda/nvim-lightbulb", opts = { autocmd = { enabled = true } } },
