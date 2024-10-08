@@ -7,7 +7,6 @@ if status is-interactive
 
     bind \b -M insert backward-kill-word
 
-    pfetch
     alias ls="exa --icons auto --color=always --group-directories-first"
     alias lt="ls -T"
     alias cat="bat --theme Coldark-Dark"
