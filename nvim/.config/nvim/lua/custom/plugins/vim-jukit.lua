@@ -27,11 +27,11 @@ return {
 		{ "<leader>ja", ":call jukit#send#all()<CR>", desc = "[J]ukit: send [A]ll" },
 
 		-- Cells
-		{ "<leader>co", ":call jukit#cells#create_below(0)<CR>", desc = "[J]ukit: create code cell bellow" },
-		{ "<leader>cO", ":call jukit#cells#create_above(0)<CR>", desc = "[J]ukit: create code cell above" },
-		{ "<leader>ct", ":call jukit#cells#create_below(1)<CR>", desc = "[J]ukit: create text cell bellow" },
-		{ "<leader>cT", ":call jukit#cells#create_above(1)<CR>", desc = "[J]ukit: create text cell above" },
-		{ "<leader>cd", ":call jukit#cells#delete()<CR>", desc = "[J]ukit: delete current code cell" },
+		{ "<leader>co", ":call jukit#cells#create_below(0)<CR>", desc = "Jukit: [C]reate [C]ode cell bellow" },
+		{ "<leader>cO", ":call jukit#cells#create_above(0)<CR>", desc = "Jukit: [C]reate [C]ode cell above" },
+		{ "<leader>ct", ":call jukit#cells#create_below(1)<CR>", desc = "Jukit: [C]reate [T]ext cell bellow" },
+		{ "<leader>cT", ":call jukit#cells#create_above(1)<CR>", desc = "Jukit: [C]reate [T]ext cell above" },
+		{ "<leader>cd", ":call jukit#cells#delete()<CR>", desc = "Jukit: [D]elete current [C]ode cell" },
 		-- nnoremap <leader>cs :call jukit#cells#split()<cr>
 		-- "   - Split current cell (saved output will then be assigned to the resulting cell above)
 		-- nnoremap <leader>cM :call jukit#cells#merge_above()<cr>

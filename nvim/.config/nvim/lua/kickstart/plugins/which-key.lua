@@ -28,12 +28,12 @@ return {
 			{ "<leader>s", group = "[S]earch" },
 			{ "<leader>w", group = "[W]orkspace" },
 			{ "<leader>b", group = "[B]uffers" },
-			{ "<leader>g", group = "[G]it" },
+			{ "<leader>g", group = "Neo[G]it" },
 			{ "<leader>h", group = "[H]arpoon" },
 			{ "<leader>t", group = "[T]oggleterm" },
-			{ "<leader>o", group = "[O]il File Manager" },
 			{ "<leader>y", group = "[Y]ank to Clipboard" },
 			{ "<leader>p", group = "[P]aste Clipboard" },
+			{ "<leader>j", group = "[J]ukit" },
 		})
 	end,
 }

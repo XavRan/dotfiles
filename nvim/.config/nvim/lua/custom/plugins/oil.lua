@@ -8,6 +8,6 @@ return {
 		},
 	},
 	keys = {
-		{ "<leader>o", ":Oil<CR>" },
+		{ "<leader>o", ":Oil<CR>", desc = "[O]il File Manager" },
 	},
 }
