@@ -65,7 +65,7 @@ return {
 		vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
 		vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
 		vim.keymap.set("n", "<leader>sl", builtin.resume, { desc = "[S]earch [L]ast" })
-		vim.keymap.set("n", "<leader>sr", ":Telescope old_files hidden=true<CR>", { desc = "[S]earch [R]ecent Files" })
+		vim.keymap.set("n", "<leader>sr", builtin.oldfiles, { desc = "[S]earch [R]ecent Files" })
 		vim.keymap.set("n", "<leader>sb", builtin.buffers, { desc = "[S]earch [B]uffers" })
 		vim.keymap.set("n", "<leader>ss", builtin.find_files, { desc = "[S]earch [S]elect Telescope" })
 		vim.keymap.set(
