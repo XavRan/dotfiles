@@ -77,7 +77,7 @@ vim.keymap.set("n", "<C-y>", ":%y+<CR>")
 vim.keymap.set("n", "<leader>l", ":Lazy<CR>", { desc = "Open [L]azy Panel" })
 
 -- Mason shorcut
-vim.keymap.set("n", "<leader>M", ":Mason<CR>", { desc = "Open [M]ason Panel" })
+vim.keymap.set("n", "<leader>m", ":Mason<CR>", { desc = "Open [M]ason Panel" })
 
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
