@@ -64,6 +64,8 @@ return {
 		opts = {},
 	},
 
+	{ "HiPhish/rainbow-delimiters.nvim" },
+
 	-- Code Actions preview
 	{
 		"aznhe21/actions-preview.nvim",
@@ -85,6 +87,33 @@ return {
 		keys = {
 			{ "<leader>ca", "<cmd>lua require('actions-preview').code_actions()<CR>", desc = "Show [C]ode [A]ctions" },
 		},
+	},
+
+	{
+		"stevanmilic/nvim-lspimport",
+		config = function()
+			vim.keymap.set(
+				"n",
+				"<leader>ci",
+				require("lspimport").import,
+				-- { noremap = true },
+				{ desc = "[C]ode [I]mport" }
+			)
+		end,
+	},
+
+	{
+		"ray-x/lsp_signature.nvim",
+		event = "InsertEnter",
+		opts = {
+			bind = true,
+			handler_opts = {
+				border = "rounded",
+			},
+		},
+		config = function(_, opts)
+			require("lsp_signature").setup(opts)
+		end,
 	},
 
 	{

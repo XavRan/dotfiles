@@ -45,7 +45,7 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 -- Preview substitutions live, as you type!
-vim.opt.inccommand = "nosplit"
+vim.opt.inccommand = "split"
 
 -- Show which line your cursor is on
 vim.opt.cursorline = true
@@ -69,6 +69,6 @@ vim.api.nvim_create_autocmd("BufEnter", {
 		vim.cmd("highlight NormalNC guibg=NONE ctermbg=NONE")
 		vim.cmd("highlight signcolumn guibg=NONE ctermbg=NONE")
 		vim.cmd("highlight Comment cterm=italic")
-		vim.cmd("set conceallevel=2")
+		vim.cmd("set formatoptions-=cro")
 	end,
 })

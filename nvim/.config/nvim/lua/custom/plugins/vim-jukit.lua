@@ -1,7 +1,7 @@
 return {
 	"luk400/vim-jukit",
 	config = function()
-		vim.g.jukit_shell_cmd = "source ~/venv/memoria/bin/activate.fish; ipython3"
+		vim.g.jukit_shell_cmd = "source ~/venv/bin/activate.fish && ipython3"
 	end,
 	keys = {
 		-- Splits
@@ -11,7 +11,7 @@ return {
 		{ "<leader>jl", ":call jukit#splits#show_last_cell_output(1)<CR>", desc = "[J]ukit: show [L]ast cell output" },
 
 		-- Send
-		{ "<CR>", ":call jukit#send#line()<CR>", desc = "[J]ukit: Send current line to output split" },
+		{ "j<CR>", ":call jukit#send#line()<CR>", desc = "[J]ukit: Send current line to output split" },
 		{ "<S-CR>", ":call jukit#send#section(0)<CR>", desc = "[J]ukit: Send section to output split" },
 		{
 			"<CR>",
