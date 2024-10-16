@@ -6,9 +6,13 @@ return {
 
 		-- Only one of these is needed, not both.
 		"nvim-telescope/telescope.nvim", -- optional
+
+		"nvim-telescope/telescope.nvim", -- optional
 	},
 	keys = {
 		{ "<leader>g", "<cmd>Neogit kind=auto<CR>", desc = "Neogit" },
 	},
-	config = true,
+	opts = {
+		kind = "auto",
+	},
 }
