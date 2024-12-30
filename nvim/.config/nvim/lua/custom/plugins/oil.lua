@@ -16,8 +16,8 @@ return {
 		view_options = {
 			show_hidden = true,
 		},
+		constrain_cursor = "name",
 	},
-	constrain_cursor = "name",
 	keys = {
 		{ "<leader>o", ":Oil<CR>", desc = "[O]il File Manager" },
 	},

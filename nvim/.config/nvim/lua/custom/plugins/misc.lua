@@ -23,17 +23,6 @@ return {
 		opts = { signs = false },
 	},
 
-	-- TODO: Not using this terminal maybe should remove
-	{
-		"akinsho/toggleterm.nvim",
-		keys = {
-			{ "<leader>tt", "<cmd>lua require('toggleterm').toggle()<CR>", desc = "Toggle [T]erminal" },
-			{ "<leader>tn", "<cmd>lua require('toggleterm').open(0.5, 'float')<CR>", desc = "Open [N]ew Terminal" },
-			{ "<leader>tc", "<cmd>lua require('toggleterm').close()<CR>", desc = "Close [T]erminal" },
-		},
-		opts = { shell = "fish" },
-	},
-
 	-- Sesion Saving
 	{
 		"folke/persistence.nvim",

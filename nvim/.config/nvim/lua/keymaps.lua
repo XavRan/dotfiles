@@ -16,12 +16,10 @@ vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save file" })
 -- vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Close buffer" })
 
 -- Diagnostic keymaps
-vim.keymap.set("n", "<leader>cp", vim.diagnostic.goto_prev, { desc = "Go to [C]ode's [P]revious diagnostic message" })
-vim.keymap.set("n", "<leader>cn", vim.diagnostic.goto_next, { desc = "Go to [C]ode's [N]ext diagnostic message" })
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
--- Keybinds to make split navigation easier. (neio variant)
+-- Keybinds to make split navigation easier.
 --  Use CTRL+<neio> to switch between windows
 --
 --  See `:help wincmd` for a list of all window commands
@@ -30,7 +28,7 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right win
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
--- Keybinds to make split navigation easier.
+-- Keybinds to make split navigation easier. (neio variant)
 --  Use CTRL+<hjkl> to switch between windows
 --
 --  See `:help wincmd` for a list of all window commands
@@ -51,20 +49,19 @@ vim.keymap.set("n", "<Del>", ":%s/", { desc = "Search and [R]eplace" })
 -- Backspace to beggining of line
 vim.keymap.set("n", "<BS>", "^")
 
--- Remap for dealing with word wrap
-vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-
--- TODO: Remap in the future
---vim.keymap.set("n", "E", "mzJ`z")
-
 -- QoL
-vim.keymap.set("v", "E", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "I", ":m '<-2<CR>gv=gv")
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "I", ":m '<-2<CR>gv=gv")
+-- TODO: Remap later
+-- vim.keymap.set("v", "E", ":m '>+1<CR>gv=gv")
+-- vim.keymap.set("v", "I", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "n", "nzzzv")
+-- vim.keymap.set("n", "n", "nzzzv")
+
+-- Experimental: keep cursor position after pasting
+vim.keymap.set("n", "p", function()
+	local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+	vim.cmd("put")
+	vim.api.nvim_win_set_cursor(0, { row + 1, col })
+end)
 
 -- Clipboard copy paste
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])

@@ -13,6 +13,11 @@ if status is-interactive
     alias grep="rg"
 
     fish_add_path /home/xavran/.cargo/bin
+    fish_add_path /opt/cuda/bin
+    fish_add_path /opt/cuda/nsight_compute
+    fish_add_path /opt/cuda/nsight_systems/bin
+
+    set CUDA_PATH /opt/cuda
 
     fzf --fish | source
     starship init fish | source
