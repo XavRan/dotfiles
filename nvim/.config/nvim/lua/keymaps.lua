@@ -50,18 +50,7 @@ vim.keymap.set("n", "<Del>", ":%s/", { desc = "Search and [R]eplace" })
 vim.keymap.set("n", "<BS>", "^")
 
 -- QoL
--- TODO: Remap later
--- vim.keymap.set("v", "E", ":m '>+1<CR>gv=gv")
--- vim.keymap.set("v", "I", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "n", "nzzzv")
--- vim.keymap.set("n", "n", "nzzzv")
-
--- Experimental: keep cursor position after pasting
-vim.keymap.set("n", "p", function()
-	local row, col = unpack(vim.api.nvim_win_get_cursor(0))
-	vim.cmd("put")
-	vim.api.nvim_win_set_cursor(0, { row + 1, col })
-end)
 
 -- Clipboard copy paste
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
