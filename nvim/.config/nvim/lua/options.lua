@@ -68,6 +68,8 @@ vim.api.nvim_create_autocmd("BufEnter", {
 		vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
 		vim.cmd("highlight NormalNC guibg=NONE ctermbg=NONE")
 		vim.cmd("highlight signcolumn guibg=NONE ctermbg=NONE")
+		vim.cmd("highlight LineNr guibg=NONE ctermbg=NONE")
+		vim.cmd("highlight CursorLineNr guibg=NONE ctermbg=NONE")
 		vim.cmd("highlight Comment cterm=italic")
 		vim.cmd("set formatoptions-=cro")
 	end,
