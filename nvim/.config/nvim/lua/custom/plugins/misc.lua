@@ -2,6 +2,8 @@ return {
 
 	{ "tpope/vim-sleuth" }, -- Detect tabstop and shiftwidth automatically
 
+	{ "tpope/vim-eunuch" }, -- File operations
+
 	{ "yamatsum/nvim-cursorline", opts = {} },
 
 	-- <Ctrl-a> and <Ctrl-x> to increment/decrement bools dates etc.

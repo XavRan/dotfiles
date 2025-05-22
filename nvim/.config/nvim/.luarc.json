@@ -1,6 +1,7 @@
 {
     "diagnostics.globals": [
         "MiniStatusline",
-        "a"
+        "a",
+        "vim"
     ]
 }
